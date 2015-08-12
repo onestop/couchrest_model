@@ -23,7 +23,7 @@ module CouchRest
         # unless the use_database method has been used, in which
         # case a new connection will be started.
         def database
-          @database ||= prepare_database(super)
+          @database ||= prepare_database(@_use_database || super)
         end
 
         def server
